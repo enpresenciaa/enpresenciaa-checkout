@@ -1,0 +1,16 @@
+:root {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #18251c;
+  background: #fdf8ec;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --action: #364b26;
+  --muted: #53604e;
+  --border: #d9ddcc;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button { font: inherit; }
+button:focus-visible { outline: 3px solid #18251c; outline-offset: 5px; }
+::selection { background: #dce5ca; }

@@ -3,26 +3,17 @@ import assert from 'node:assert/strict'
 import { createElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { getPage } from '../src/app/routes'
-import { readEnvironment, validateReturnUrl } from '../src/config/environment'
+import { application } from '../src/config/application'
 import { ReturnToAppButton } from '../src/components/ReturnToAppButton'
 
 describe('Return destination trust boundary', () => {
-  it('accepts only the configured app destination', () => {
-    assert.equal(validateReturnUrl('enpresenciaa://billing/return'), 'enpresenciaa://billing/return')
-  })
-  for (const value of [undefined, null, '', ' ', 42, 'javascript:alert(1)',
-    'https://example.com', '//example.com', 'enpresenciaa://other/return',
-    'enpresenciaa://billing/return?token=example', 'enpresenciaa://billing/return#example',
-    'enpresenciaa://user:pass@billing/return', 'enpresenciaa://billing/return/../other',
-    ' enpresenciaa://billing/return', 'enpresenciaa://billing/return\n']) {
-    it(`rejects invalid destination ${JSON.stringify(value)}`, () => {
-      assert.equal(validateReturnUrl(value), null)
-    })
-  }
-  it('falls back safely when configuration is missing', () => {
-    assert.deepEqual(readEnvironment({}), { appName: 'En Presenciaa', returnUrl: null })
-    assert.equal(readEnvironment({ appName: '  ' }).appName, 'En Presenciaa')
-    assert.equal(readEnvironment({ appName: 'x'.repeat(81) }).appName, 'En Presenciaa')
+  it('uses the fixed public destination without query or fragment', () => {
+    const url = new URL(application.returnUrl)
+    assert.equal(url.protocol, 'enpresenciaa:')
+    assert.equal(url.hostname, 'billing')
+    assert.equal(url.pathname, '/return')
+    assert.equal(url.search, '')
+    assert.equal(url.hash, '')
   })
 })
 
@@ -35,9 +26,14 @@ describe('Non-authoritative return routes', () => {
     assert.match(getPage('/pago/cancelado').description, /no activa ningún acceso/)
   })
   it('handles root, unknown and encoded routes without reflecting the input', () => {
-    for (const route of ['/', '/unknown', '/pago/%63onfirmando', '/pago/confirmando/']) {
-      assert.equal(getPage(route).label, 'Enlace no disponible')
+    for (const route of ['/', '/unknown', '/pago/%63onfirmando']) {
+      assert.equal(getPage(route).title, '404')
+      assert.equal(getPage(route).label, 'Página no encontrada')
     }
+  })
+  it('supports Amplify clean URLs with a trailing slash', () => {
+    assert.equal(getPage('/pago/confirmando/').label, 'Confirmación pendiente')
+    assert.equal(getPage('/pago/cancelado/').label, 'Proceso cancelado')
   })
 })
 

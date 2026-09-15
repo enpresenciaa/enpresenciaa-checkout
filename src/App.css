@@ -1,5 +1,8 @@
 .page-shell { min-height: 100svh; display: flex; flex-direction: column; padding: 2rem 1.25rem 1.5rem; }
 .brand { text-align: center; font-family: 'Alice', Georgia, serif; font-size: 1.65rem; letter-spacing: -.04em; overflow-wrap: anywhere; }
+.not-found-panel { width: 100%; margin: auto; padding-block: 2rem; text-align: center; }
+.not-found-code { max-width: none; margin: 0; font-family: Arial, sans-serif; font-size: 42vw; font-weight: 400; line-height: 1; letter-spacing: 0; }
+.not-found-message { margin: 1rem 0 0; font-size: clamp(.875rem, 2vw, 1.125rem); line-height: 1.5; color: var(--muted); }
 .status-panel { width: 100%; max-width: 36rem; margin: auto; padding: 3.5rem 0 2.5rem; text-align: center; }
 .status-symbol { display: inline-grid; place-items: center; width: 3.75rem; height: 3.75rem; border: 1px solid #b7c4a7; border-radius: 50%; font-size: 2rem; color: var(--action); background: #edf0df; }
 .eyebrow { margin: 1.75rem 0 .85rem; font-size: .875rem; font-weight: 500; color: var(--muted); }

@@ -1,0 +1,74 @@
+.community-plans { background: var(--home-cream); padding-bottom: 1rem; }
+.personal-spaces { padding-top: 1rem; }
+.personal-spaces-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.25rem, 2.5vw, 2.5rem); }
+.personal-space { min-width: 0; min-height: clamp(280px, 26vw, 350px); position: relative; overflow: hidden; border-radius: 1.1rem; isolation: isolate; background: #fcf9f1; }
+.personal-space-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; z-index: -2; }
+.personal-space::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #fcf9f147, #fcf9f10a 68%, transparent); }
+.personal-space-copy { padding: clamp(1.5rem, 2.2vw, 2.5rem); max-width: 75%; }
+.personal-space h2 { font-family: Georgia, 'Times New Roman', serif; color: var(--home-green); font-size: clamp(1.6rem, 2.4vw, 2.3rem); font-weight: 400; line-height: 1.12; letter-spacing: -.035em; margin: 0 0 1rem; }
+.personal-space p { max-width: 18rem; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1rem, 1.5vw, 1.3rem); line-height: 1.35; color: #50584f; margin: 0 0 1.5rem; text-wrap: pretty; }
+.personal-space-button { font-size: clamp(.95rem, 1.4vw, 1.2rem); min-height: 3rem; gap: 1rem; padding: .7rem 1.3rem; white-space: nowrap; }
+.community-plans button:disabled { cursor: default; opacity: 1; }
+.community-plans button:disabled:hover { transform: none; background: #304324; }
+.plans-section { padding-top: clamp(3rem, 5vw, 5rem); padding-bottom: 1.5rem; position: relative; isolation: isolate; overflow: hidden; }
+.plans-heading { text-align: center; position: relative; margin-bottom: 2.5rem; }
+.plans-heading .wellness-eyebrow { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-bottom: 1.1rem; }
+.plans-heading .wellness-eyebrow::before, .plans-heading .wellness-eyebrow::after { content: ''; width: 3rem; height: 1px; background: #d8be89; }
+.plans-heading h2 { margin: 0 auto 1rem; font-size: clamp(2rem, 3.2vw, 3.1rem); max-width: 68rem; }
+.plans-subtitle { margin: 0; color: #626b60; font-size: clamp(1rem, 1.4vw, 1.25rem); line-height: 1.5; }
+.plans-botanical { position: absolute; z-index: -1; width: 14rem; height: 20rem; top: 1rem; color: #c9b986; opacity: .3; pointer-events: none; }
+.plans-botanical svg { width: 100%; height: 100%; }
+.plans-botanical-left { left: -5rem; transform: rotate(12deg); }
+.plans-botanical-right { right: -5rem; transform: scaleX(-1) rotate(15deg); }
+.plans-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(.9rem, 1.5vw, 1.5rem); }
+.plan-card { display: flex; flex-direction: column; align-items: center; position: relative; min-width: 0; border: 1px solid #e8d4ae; border-radius: 1.2rem; padding: 3.3rem clamp(1rem, 1.8vw, 1.8rem) 1.5rem; text-align: center; background: linear-gradient(140deg, #fffdf8f2, #faf7ef); box-shadow: 0 12px 26px #5b48260a; }
+.plan-icon { display: grid; place-items: center; width: clamp(4.2rem, 6vw, 5.7rem); aspect-ratio: 1; margin: 0 0 1rem; padding: 1rem; border-radius: 50%; background: #f5eddf; color: #aa843e; }
+.plan-icon svg { width: 100%; height: 100%; }
+.plan-card h3 { margin: 0 0 .65rem; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: clamp(1.8rem, 2.7vw, 2.5rem); line-height: 1.15; letter-spacing: -.03em; }
+.plan-description { margin: 0 0 1.3rem; min-height: 3rem; display: grid; align-items: start; color: #626b60; font-size: clamp(.85rem, 1vw, 1rem); line-height: 1.5; text-wrap: balance; }
+.plan-price { margin: 0 0 .3rem; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 2.8vw, 2.9rem); line-height: 1.1; letter-spacing: -.035em; white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; }
+.plan-price span { font-size: .56em; letter-spacing: 0; }
+.plan-period { margin: 0 0 .65rem; font-size: 1rem; line-height: 1.4; color: #626b60; }
+.plan-price-mxn { font-size: clamp(.75rem, .95vw, .95rem); line-height: 1.5; color: #626b60; margin: 0; font-variant-numeric: lining-nums tabular-nums; }
+.plan-benefits { list-style: none; border-top: 1px solid #ddc594; width: 100%; padding: 1.4rem 0 0; margin: 1.5rem 0; display: grid; gap: .9rem; text-align: left; }
+.plan-benefits li { display: flex; align-items: center; gap: .6rem; color: #596357; font-size: clamp(.8rem, .95vw, .95rem); line-height: 1.45; }
+.plan-check { display: grid; place-items: center; flex: 0 0 1.45rem; width: 1.45rem; height: 1.45rem; border-radius: 50%; color: #253923; background: #e8e4cd; }
+.plan-check svg { width: 1.1rem; height: 1.1rem; }
+.plan-button { width: 100%; min-height: 3.1rem; margin-top: auto; padding: .7rem .5rem; gap: .8rem; font-size: clamp(1rem, 1.3vw, 1.2rem); }
+.plan-card-featured { background: linear-gradient(145deg, #344a2b, #1b3022); color: #fffdf5; border-color: #bf9e55; box-shadow: 0 12px 28px #263b2126; }
+.plan-badge { position: absolute; top: .85rem; left: .7rem; right: .7rem; width: fit-content; max-width: calc(100% - 1.4rem); margin: 0 auto; border-radius: 999px; padding: .3rem .8rem; font-size: clamp(.55rem, .7vw, .7rem); line-height: 1.4; letter-spacing: .05em; text-transform: uppercase; background: #e4c06b; color: #2e3c23; }
+.plan-card-featured .plan-icon { color: #e4ca83; background: #ffffff09; }
+.plan-card-featured .plan-description, .plan-card-featured .plan-period, .plan-card-featured .plan-price-mxn, .plan-card-featured .plan-benefits li { color: #f0f1df; }
+.plan-card-featured .plan-check { background: #e4c06b; }
+.community-plans .plan-card-featured .plan-button, .community-plans .plan-card-featured .plan-button:disabled:hover { color: #203323; background: #fcf4e5; border-color: #fcf4e5; }
+@media (max-width: 900px) {
+  .personal-spaces-grid { grid-template-columns: 1fr; }
+  .personal-space { min-height: 320px; }
+  .personal-space-copy { max-width: 65%; padding: 2rem; }
+  .personal-space h2 { font-size: 2rem; }
+  .personal-space p { font-size: 1.2rem; }
+  .personal-space-button { font-size: 1.1rem; }
+  .plans-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .plan-card { min-height: 0; padding: 3.3rem 1.5rem 1.5rem; }
+  .plan-card h3 { font-size: 2rem; }
+  .plan-price { font-size: 2.6rem; }
+  .plan-period { font-size: 1rem; }
+  .plan-button { font-size: 1.15rem; }
+}
+@media (max-width: 480px) {
+  .personal-space { min-height: 310px; }
+  .personal-space-copy { max-width: 100%; padding: 1.5rem; }
+  .personal-space h2 { font-size: 1.7rem; }
+  .personal-space p { font-size: 1.05rem; max-width: 15rem; }
+  .personal-space::before { background: linear-gradient(90deg, #fcf9f1e6, #fcf9f1b8 55%, #fcf9f100); }
+  .personal-space-image { object-position: 65% center; }
+  .personal-space-button { font-size: 1rem; }
+  .plans-grid { grid-template-columns: 1fr; }
+  .plan-card { padding: 3.3rem 1.6rem 1.6rem; }
+}
+
+
+
+@media (max-width: 1100px) { .plans-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .plan-description { min-height: 0; } .plan-benefits li { font-size: .95rem; } .plan-badge { font-size: .65rem; } }
+@media (max-width: 480px) { .plans-grid { grid-template-columns: 1fr; } .plans-heading .wellness-eyebrow { gap: .7rem; font-size: .6rem; } .plans-heading .wellness-eyebrow::before, .plans-heading .wellness-eyebrow::after { width: 1.5rem; } .plan-price-mxn { font-size: .95rem; } .plan-description { font-size: .95rem; } }
+

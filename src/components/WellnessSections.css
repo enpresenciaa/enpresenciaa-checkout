@@ -1,0 +1,50 @@
+.wellness-sections { background: linear-gradient(180deg, #fcfaf5, var(--home-cream)); }
+.wellness-container { width: 100%; max-width: 1600px; margin-inline: auto; padding-inline: 6.7%; }
+.exercises-section { padding-top: clamp(2.5rem, 5vw, 5rem); padding-bottom: clamp(2.5rem, 5vw, 5rem); }
+.wellness-eyebrow { margin: 0 0 1rem; color: #967235; font-size: clamp(.6rem, .8vw, .75rem); font-weight: 500; line-height: 1.6; letter-spacing: .2em; text-transform: uppercase; }
+.wellness-heading h2 { margin: 0 0 .9rem; color: var(--home-green); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 3.6vw, 3.3rem); font-weight: 400; line-height: 1.08; letter-spacing: -.035em; text-wrap: balance; }
+.wellness-intro { margin: 0; color: #535a53; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1rem, 1.5vw, 1.35rem); line-height: 1.45; }
+.exercise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 2.6vw, 2.5rem); margin-top: clamp(1.8rem, 3vw, 2.7rem); }
+.exercise-card { min-width: 0; border-radius: 1rem; background: #fdfbf7; box-shadow: 0 9px 24px #4f41260c; overflow: hidden; }
+.exercise-image-wrap { position: relative; aspect-ratio: 16 / 9; border-radius: 1rem; overflow: hidden; }
+.exercise-image-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.exercise-format { position: absolute; left: 1.1rem; bottom: 1rem; width: clamp(2.3rem, 3.6vw, 3.2rem); aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; background: #fffef8; box-shadow: 0 2px 7px #27372312; }
+.exercise-format svg { width: 48%; height: 48%; }
+.exercise-format-play { color: #9b781f; }
+.exercise-format-text { color: var(--home-green); }
+.exercise-card-copy { padding: 1.1rem 1.2rem 1.3rem; }
+.exercise-card h3 { margin: 0 0 .35rem; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.05rem, 1.6vw, 1.4rem); font-weight: 400; letter-spacing: -.02em; line-height: 1.2; }
+.exercise-card p { margin: 0; color: #62665e; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(.9rem, 1.3vw, 1.1rem); line-height: 1.45; }
+.dimensions-section { position: relative; overflow: hidden; padding-block: clamp(2rem, 4.5vw, 4.5rem) clamp(3rem, 5vw, 5rem); isolation: isolate; }
+.dimensions-path { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; color: #d4b26d; opacity: .7; }
+.dimensions-layout { display: grid; grid-template-columns: 40% minmax(0, 1fr); align-items: center; gap: 2%; }
+.dimensions-heading h2 { font-size: clamp(1.8rem, 3.05vw, 2.8rem); }
+.dimensions-heading .wellness-intro { font-size: clamp(1rem, 1.25vw, 1.15rem); }
+.dimension-grid { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: start; gap: clamp(.5rem, 1.5vw, 1.5rem); margin: 1.2rem 0 0; padding: 0; }
+.dimension-item { text-align: center; }
+.dimension-icon { display: grid; place-items: center; width: clamp(3.7rem, 6.8vw, 6rem); aspect-ratio: 1; margin: 0 auto 1rem; padding: .9rem; border: 1px solid #dfcfaa; border-radius: 50%; background: #fdfbf5; position: relative; color: #52633a; }
+.dimension-icon::before { content: ''; position: absolute; inset: 5px; border-radius: 50%; background: #ecebd9; z-index: 0; }
+.dimension-icon svg { width: 100%; height: 100%; position: relative; max-width: 42px; max-height: 42px; }
+.dimension-emotional .dimension-icon, .dimension-spiritual .dimension-icon { color: #9a7421; }
+.dimension-emotional .dimension-icon::before, .dimension-spiritual .dimension-icon::before { background: #f5e9ca; }
+.dimension-item h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: clamp(1rem, 1.5vw, 1.3rem); margin: 0 0 .55rem; }
+.dimension-item p { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(.9rem, 1.15vw, 1.05rem); line-height: 1.4; color: #62665e; max-width: 10rem; margin: 0 auto; }
+@media (max-width: 1000px) {
+  .dimensions-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .dimension-grid { margin-top: 0; }
+  .dimensions-path { opacity: .4; }
+  .dimensions-heading h2 { font-size: 2.2rem; }
+}
+@media (max-width: 600px) {
+  .wellness-container { padding-inline: 6%; }
+  .wellness-heading h2 { font-size: 2rem; }
+  .wellness-desktop-break { display: none; }
+  .exercise-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .exercise-card h3 { font-size: 1.25rem; }
+  .exercise-card p { font-size: 1rem; }
+  .exercise-format { width: 2.8rem; }
+  .dimension-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1rem; }
+  .dimension-icon { width: 4.8rem; }
+  .dimension-item h3 { font-size: 1.15rem; }
+  .dimension-item p { font-size: 1rem; }
+}

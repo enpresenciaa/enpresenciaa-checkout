@@ -1,9 +1,11 @@
+import { Home } from './components/Home'
 import { application } from './config/application'
 import { getPage } from './app/routes'
 import { ReturnToAppButton } from './components/ReturnToAppButton'
 import './App.css'
 
 function App() {
+  if (window.location.pathname === '/') return <Home />
   const page = getPage(window.location.pathname)
   if (page.isNotFound) {
     return (
@@ -33,3 +35,4 @@ function App() {
   )
 }
 export default App
+

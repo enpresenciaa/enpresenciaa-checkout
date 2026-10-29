@@ -20,3 +20,5 @@ h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -.025
 footer { text-align: center; font-size: .875rem; line-height: 1.7; color: var(--muted); padding-top: 1rem; }
 @media (max-width: 380px) { .page-shell { padding-inline: 1rem; } .status-panel { padding-top: 2.5rem; } .return-action button { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
+
+.brand-logo { display: block; width: 72px; height: 72px; object-fit: contain; margin: 0 auto .4rem; }

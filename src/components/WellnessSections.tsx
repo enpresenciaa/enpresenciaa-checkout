@@ -2,9 +2,9 @@ import './WellnessSections.css'
 
 const assets = 'https://pagina-enprecencia.s3.us-east-1.amazonaws.com'
 const exercises = [
-  { title: 'Audios guiados', description: 'Relájate y reconecta', image: 'audios-guiados.png', alt: 'Mujer con los ojos cerrados escuchando audio con audífonos al amanecer', format: 'play' },
-  { title: 'Videos de introducción', description: 'Descubre nuevas perspectivas', image: 'videos-introduccion.png', alt: 'Amanecer dorado sobre un valle de montañas y bosques entre la niebla', format: 'play' },
-  { title: 'Reflexiones escritas', description: 'Conecta contigo cada día', image: 'reflexiones-escritas.png', alt: 'Cuaderno abierto con una pluma sobre sus páginas, iluminado por el sol', format: 'text' },
+  { title: 'Audios guiados', description: 'Relájate y reconecta', image: 'audios-guiados.png', alt: 'Mujer con los ojos cerrados escuchando audio con audífonos al amanecer' },
+  { title: 'Videos de introducción', description: 'Descubre nuevas perspectivas', image: 'videos-introduccion.png', alt: 'Amanecer dorado sobre un valle de montañas y bosques entre la niebla' },
+  { title: 'Reflexiones escritas', description: 'Conecta contigo cada día', image: 'reflexiones-escritas.png', alt: 'Cuaderno abierto con una pluma sobre sus páginas, iluminado por el sol' },
 ] as const
 
 function DimensionIcon({ kind }: { kind: 'mental' | 'emotional' | 'physical' | 'spiritual' }) {
@@ -39,11 +39,6 @@ export function WellnessSections() {
             <article className="exercise-card" key={exercise.title}>
               <div className="exercise-image-wrap">
                 <img src={`${assets}/${exercise.image}`} alt={exercise.alt} loading="lazy" decoding="async" width="1672" height="941" />
-                <span className={`exercise-format exercise-format-${exercise.format}`} aria-hidden="true">
-                  {exercise.format === 'play'
-                    ? <svg viewBox="0 0 24 24"><path d="M8 4v16l13-8Z" fill="currentColor" /></svg>
-                    : <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2h8l5 5v15H6ZM14 2v6h5M9 12h7M9 16h7" /></svg>}
-                </span>
               </div>
               <div className="exercise-card-copy">
                 <h3>{exercise.title}</h3>
@@ -75,3 +70,4 @@ export function WellnessSections() {
     </div>
   )
 }
+

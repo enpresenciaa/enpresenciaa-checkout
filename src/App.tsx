@@ -10,7 +10,7 @@ function App() {
   if (page.isNotFound) {
     return (
       <div className="page-shell">
-        <header className="brand">{application.name}</header>
+        <header className="brand"><img className="brand-logo" src={application.logoUrl} alt="" width="72" height="72" />{application.name}</header>
         <main className="not-found-panel" aria-labelledby="page-title">
           <h1 id="page-title" className="not-found-code">{page.title}</h1>
           <p className="not-found-message">{page.label}</p>
@@ -20,7 +20,7 @@ function App() {
   }
   return (
     <div className="page-shell">
-      <header className="brand">{application.name}</header>
+      <header className="brand"><img className="brand-logo" src={application.logoUrl} alt="" width="72" height="72" />{application.name}</header>
       <main className="status-panel" aria-labelledby="page-title">
         <span className="status-symbol" aria-hidden="true">{page.symbol}</span>
         <p className="eyebrow">{page.label}</p>
@@ -35,4 +35,5 @@ function App() {
   )
 }
 export default App
+
 

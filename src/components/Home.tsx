@@ -1,4 +1,5 @@
 import './Home.css'
+import { application } from '../config/application'
 import { WellnessSections } from './WellnessSections'
 import { CommunityAndPlans } from './CommunityAndPlans'
 import { ClosingSection } from './ClosingSection'
@@ -16,15 +17,12 @@ function HeroIcon({ kind }: { kind: 'leaf' | 'journal' | 'circle' }) {
 }
 
 
-function HeroSun() {
-  return <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true"><circle cx="32" cy="30" r="9" />{Array.from({ length: 20 }, (_, index) => <path key={index} d="M32 16V3" transform={`rotate(${index * 18} 32 30)`} />)}<path d="M32 25v36" /></svg>
-}
 export function Home() {
   return (
     <div className="home">
       <header className="home-header">
         <a className="home-logo" href="/" aria-label="En Presenciaa, inicio">
-          <img src={`${assets}/Logoenpresencia.png`} alt="En Presenciaa" />
+          <img src={application.logoUrl} alt="" width="72" height="72" /><span>En Presenciaa</span>
         </a>
         <nav aria-label="Navegación principal">
           <a className="home-nav-current" href="#inicio">Inicio</a>
@@ -52,14 +50,8 @@ export function Home() {
               <path d="M0 17C260 100 270 168 505 173S805 218 1020 155 1250 78 1440 103M0 274C210 365 340 275 558 321S825 430 1060 370 1280 303 1440 375" fill="none" stroke="#b59556" strokeWidth="1" />
             </svg>
           </div>
-          <div className="hero-phone" aria-hidden="true">
-            <div className="hero-phone-screen">
-              <img className="hero-phone-landscape" src={`${assets}/imagenhero.png`} alt="" />
-              <div className="hero-phone-top"><span>9:41</span><span>● ▰</span></div>
-              <div className="hero-phone-island" />
-              <div className="hero-phone-copy"><HeroSun /><p className="hero-phone-brand">En Presenciaa</p><p className="hero-phone-message">Un camino<br />más consciente<br />te espera</p></div>
-              <div className="hero-phone-invitation">Hoy también<br />puedes volver a ti <span>→</span></div>
-            </div>
+          <div className="hero-phone">
+            <img className="hero-phone-image" src={`${assets}/InicioEnPresencia.png`} alt="Inicio de En Presenciaa con las dimensiones mental, emocional, física y energética o espiritual" width="883" height="1782" fetchPriority="high" />
           </div>
           <ul className="hero-benefits" aria-label="Tu camino de bienestar">
             <li><HeroIcon kind="leaf" />Respira</li>
@@ -74,5 +66,7 @@ export function Home() {
     </div>
   )
 }
+
+
 
 

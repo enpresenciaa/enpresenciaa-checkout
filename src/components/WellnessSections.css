@@ -8,10 +8,6 @@
 .exercise-card { min-width: 0; border-radius: 1rem; background: #fdfbf7; box-shadow: 0 9px 24px #4f41260c; overflow: hidden; }
 .exercise-image-wrap { position: relative; aspect-ratio: 16 / 9; border-radius: 1rem; overflow: hidden; }
 .exercise-image-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.exercise-format { position: absolute; left: 1.1rem; bottom: 1rem; width: clamp(2.3rem, 3.6vw, 3.2rem); aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; background: #fffef8; box-shadow: 0 2px 7px #27372312; }
-.exercise-format svg { width: 48%; height: 48%; }
-.exercise-format-play { color: #9b781f; }
-.exercise-format-text { color: var(--home-green); }
 .exercise-card-copy { padding: 1.1rem 1.2rem 1.3rem; }
 .exercise-card h3 { margin: 0 0 .35rem; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.05rem, 1.6vw, 1.4rem); font-weight: 400; letter-spacing: -.02em; line-height: 1.2; }
 .exercise-card p { margin: 0; color: #62665e; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(.9rem, 1.3vw, 1.1rem); line-height: 1.45; }
@@ -42,9 +38,9 @@
   .exercise-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .exercise-card h3 { font-size: 1.25rem; }
   .exercise-card p { font-size: 1rem; }
-  .exercise-format { width: 2.8rem; }
   .dimension-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1rem; }
   .dimension-icon { width: 4.8rem; }
   .dimension-item h3 { font-size: 1.15rem; }
   .dimension-item p { font-size: 1rem; }
 }
+
